@@ -1,7 +1,8 @@
 {
   "name": "N1-theme-DarkSoda",
-  "main": "./lib/main",
-  "version": "0.1.0",
+  "title": "Dark Soda",
+  "displayName": "Dark Soda",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:adambullmer/N1-theme-DarkSoda.git"
@@ -10,10 +11,11 @@
   "bugs": {
     "url": "https://github.com/adambullmer/N1-theme-DarkSoda/issues"
   },
-  "engines": {
-    "atom": ">=0.3.20-6bbe930"
-  },
+  "theme": "ui",
   "description": "Nylas N1 theme. Dark Soda (Monokai) built upon the native dark theme",
-  "dependencies": {},
-  "license": "MIT"
+  "license": "GPL-3.0",
+  "engines": {
+    "nylas": "*"
+  },
+  "private": true
 }

@@ -1,0 +1,83 @@
+// Change these variables to modify your theme!
+@import 'colors';
+//=============================== Components ===========================//
+
+//== Toolbar
+@toolbar-background-color: darken(@white, 17.5%);
+
+//== Account Sidebar
+@panel-background-color   : @gray-lighter;
+@source-list-bg           : @panel-background-color;
+@source-list-active-bg    : @panel-background-color;
+@source-list-active-color : @component-active-color;
+
+//== Thread List (e.g, `.list-group-item`, `.list-item`)
+@list-bg              : @soda-black;
+@list-border          : @soda-light-black;
+@list-hover-bg        : lighten(@list-bg, 4%);
+@list-focused-color   : @list-bg;
+@list-focused-bg      : @component-active-color;
+@list-focused-border  : @list-focused-bg;
+@list-selected-color  : inherit;
+@list-selected-bg     : mix(@component-active-color, @list-bg, 17%);
+@list-selected-border : mix(@component-active-color, @list-bg, 50%);
+
+//== Notifications
+@background-color-info    : @blue-light;
+@background-color-success : #009ec4;
+@background-color-warning : #ff4800;
+@background-color-error   : #f15f4b;
+@background-color-pending : #b4babd;
+
+//== Menus
+@menu-item-color-hover    : fade(@blue-light, 10%);
+@menu-item-color-selected : @blue-light;
+@menu-text-color-selected : @text-color-inverse;
+
+//== Sizes
+@input-font-size         : 14px;
+@component-padding       : 10px;
+@component-icon-padding  : 5px;
+@component-icon-size     : 16px;
+@component-line-height   : 25px;
+@component-border-radius : 2px;
+
+
+//=============================== Colors ===============================//
+
+@accent-primary:      @blue;
+@accent-primary-dark: @blue-dark;
+
+@background-primary     : @soda-black;
+@background-off-primary : @soda-black;
+@background-secondary   : @soda-light-black;
+@background-tertiary    : @soda-light-black;
+
+@color-info    : @soda-dark-blue;
+@color-success : @soda-green;
+@color-warning : @soda-orange;
+@color-error   : @soda-pink;
+@color-danger  : @soda-dark-red;
+
+@component-active-color : @accent-primary-dark;
+@component-active-bg    : @background-primary;
+
+@background-gradient: linear-gradient(to top, rgba(241,241,241,0.75) 0%,
+                        rgba(253,253,253,0.75) 100%);
+
+@border-color-primary   : darken(@background-primary, 10%);
+@border-color-secondary : darken(@background-secondary, 10%);
+@border-color-tertiary  : darken(@background-tertiary, 10%);
+@border-color-divider   : @border-color-secondary;
+
+//============================= Typography =============================//
+
+// ----- Colors -----
+@text-color         : @soda-white;
+@text-color-inverse : @soda-black;
+
+@text-color-heading: @soda-white;
+
+@text-color-link        : @soda-blue;
+@text-color-link-hover  : @soda-blue-dark;
+@text-color-link-active : @soda-blue-dark;
