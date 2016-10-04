@@ -1,23 +1,15 @@
-// @import "ui-variables";
-// // @import "ui-mixins";
 // @import "colors";
+@import "ui-variables";
+@import "components";
+@import "toolbar";
+@import "center";
+@import "left-sidebar";
 
 // .thread-icon:not(.thread-icon-unread) {
 //     -webkit-filter: none;
 // }
 
 // .menu {
-//     .header-container {
-//         input {
-//             color: @soda-white;
-//         }
-
-//         input.search {
-//             color: @soda-white;
-//             background-color: @soda-black;
-//         }
-//     }
-
 //     .content-container {
 //         background-color: @soda-black;
 //         color: @soda-white;
@@ -101,48 +93,6 @@
 //                 background-color: @soda-green;
 //             }
 //         }
-
-//         .unread {
-//             color: @soda-white;
-//             background-color: @soda-pink;
-//             font-weight: bold;
-//         }
-//     }
-
-//     .secondary-item {
-
-//         &:hover {
-//             background: @soda-light-black;
-//         }
-//     }
-// }
-
-// #account-sidebar {
-//     .item {
-
-//         &:after {
-//             position: absolute;
-//             top: 13px;
-//             bottom: 13px;
-//             right: -5px;
-//             border: 2px solid @soda-green;
-//             border-top-left-radius: 5px;
-//             border-bottom-left-radius: 5px;
-//             content: '';
-
-//             -webkit-transition:
-//                 right  0.1s ease-in-out,
-//                 top    0.2s ease-in-out 0.1s,
-//                 bottom 0.2s ease-in-out 0.1s;
-//         }
-
-//         &.selected {
-//             &:after {
-//                 top    : 0;
-//                 bottom : 0;
-//                 right  : 0;
-//             }
-//         }
 //     }
 // }
 
@@ -168,35 +118,6 @@
 //     }
 // }
 
-
-// #message-list .mail-important-icon {
-//     -webkit-mask-position: 0;
-// }
-
-// .notifications-sticky {
-//     .notification-developer {
-//         background-color: @soda-purple;
-//     }
-
-//     .notification-info {
-//         background-color: @soda-cyan;
-//     }
-// }
-
-// .undo-redo-manager {
-//     .undo-redo {
-//         background: @soda-purple;
-
-//         .undo-redo-action-wrapper {
-//             color: @soda-white;
-
-//             .undo-redo-action-text {
-//                 color: @soda-white;
-//             }
-//         }
-//     }
-// }
-
 // .thread-list, .draft-list {
 //     .list-item {
 //         &:hover {
@@ -219,32 +140,6 @@
 //     .thread-icon, .draft-icon, .mail-important-icon {
 //         &:not(.thread-icon-unread) {
 //             -webkit-filter: none;
-//         }
-//     }
-
-//     .thread-icon {
-//         &.thread-icon-unread {
-//             background: @soda-pink;
-//             -webkit-mask-image: url('../static/images/thread-list/icon-unread-@2x.png');
-//             -webkit-mask-repeat: no-repeat;
-//             -webkit-mask-size: 16px;
-//             -webkit-mask-position: 5px;
-//         }
-
-//         &.thread-icon-star {
-//             background: @soda-orange;
-//             -webkit-mask-image: url('../static/images/thread-list/icon-star-@2x.png');
-//             -webkit-mask-repeat: no-repeat;
-//             -webkit-mask-size: 16px;
-//             -webkit-mask-position: 5px;
-//         }
-
-//         &.thread-icon-attachment {
-//             background: @soda-white;
-//             -webkit-mask-image: url('../static/images/thread-list/icon-attachment-@2x.png');
-//             -webkit-mask-repeat: no-repeat;
-//             -webkit-mask-size: 16px;
-//             -webkit-mask-position: 5px;
 //         }
 //     }
 // }
@@ -293,12 +188,5 @@
 //                 }
 //             }
 //         }
-//     }
-// }
-
-// .sidebar-activity {
-//     .inner {
-//         color: @soda-white;
-//         background-color: @soda-purple
 //     }
 // }

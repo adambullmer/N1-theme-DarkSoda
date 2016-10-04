@@ -1,0 +1,61 @@
+@import "colors.less";
+
+.nylas-outline-view {
+    .heading {
+        padding-bottom: @component-icon-padding;
+        padding-top: @component-icon-padding;
+    }
+
+    .item {
+        .item-count-box.alt-count {
+            background-color: @soda-pink;
+            color: @soda-white;
+        }
+
+        &.selected {
+            margin-left: -20px;
+            padding-left: 20px;
+        }
+    }
+}
+
+.account-sidebar {
+    .item {
+        position: relative;
+
+        &:after {
+            position: absolute;
+            top: 13px;
+            bottom: 13px;
+            right: -5px;
+            border: 2px solid @soda-green;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            content: '';
+
+            -webkit-transition:
+                right  0.1s,
+                top    0.2s 0.1s,
+                bottom 0.2s 0.1s;
+        }
+
+        &.selected {
+            &:after {
+                top    : 0;
+                bottom : 0;
+                right  : 0;
+            }
+        }
+    }
+}
+
+.sidebar-activity {
+    .item {
+        background-color: @soda-green;
+        color: @soda-black;
+
+        .count {
+            color: @soda-black;
+        }
+    }
+}

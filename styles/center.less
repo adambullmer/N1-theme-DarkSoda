@@ -1,0 +1,55 @@
+@import "colors.less";
+
+.thread-list, .draft-list {
+    .list-item {
+        background-color: lighten(@soda-black, 7%);
+
+        &:hover {
+            .thread-icon-none {
+                background: @soda-white;
+                -webkit-mask-image: url('../static/images/thread-list/icon-star-hover-@2x.png');
+                -webkit-mask-repeat: no-repeat;
+                -webkit-mask-size: 16px;
+                -webkit-mask-position: 5px;
+            }
+        }
+    }
+
+    .focused {
+        .thread-icon, .draft-icon, .mail-important-icon {
+            -webkit-filter: none;
+        }
+    }
+
+    .thread-icon, .draft-icon, .mail-important-icon {
+        &:not(.thread-icon-unread) {
+            -webkit-filter: none;
+        }
+    }
+
+    .thread-icon {
+        &.thread-icon-unread {
+            .icon-mask-override(@soda-pink, '../static/images/thread-list/icon-unread-@2x.png');
+        }
+
+        &.thread-icon-star {
+            .icon-mask-override(@soda-orange, '../static/images/thread-list/icon-star-@2x.png');
+        }
+
+        &.thread-icon-replied {
+            .icon-mask-override(@soda-light-grey, '../static/images/thread-list/icon-replied-@2x.png');
+        }
+
+        &.thread-icon-attachment {
+            .icon-mask-override(@soda-light-grey, '../static/images/thread-list/icon-attachment-@2x.png');
+        }
+    }
+}
+
+.icon-mask-override(@color, @url) {
+    background: @color;
+    -webkit-mask-image: url(@url);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 16px;
+    -webkit-mask-position: 5px;
+}

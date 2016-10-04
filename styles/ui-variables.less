@@ -1,20 +1,204 @@
-// Change these variables to modify your theme!
+// Color abstraction hierarchy:
+// 1. Hex code (#428bca)
+// 2. Common color name (@blue)
+// 3. Generic color descriptor (@accent-primary, @background-primary)
+// --------
+// 4. Generic usage descriptor (@input-background, @button-background)
+// 5. Application-specific usage (@unread-label-background)
+
+// Typography abstraction hierarchy
+// 1. Font-face (Nylas-Pro)
+// 2. Common name (@bold, @italic)
+// 3. Generic font descriptor mixins (.bold, .italic, .h1, .h2)
+// --------
+// 4. Generic usage descriptor (.btn-text, .p-body)
+// 5. Application-specific usage (.message-list-h1)
+
 @import 'colors';
+
+//=============================== Colors ===============================//
+//== Color Descriptors
+@accent                 : @soda-pink;
+@accent-primary         : @soda-cyan;
+@accent-primary-dark    : @soda-green;
+
+@background-primary     : @soda-black;
+@background-off-primary : @soda-black;
+@background-secondary   : @soda-light-black;
+@background-tertiary    : @soda-light-black;
+
+@color-info             : @soda-blue;
+@color-success          : @soda-green;
+@color-warning          : @soda-orange;
+@color-error            : @soda-pink;
+@color-danger           : @soda-dark-red;
+
+@component-active-color : @accent-primary-dark;
+@component-active-bg    : @background-primary;
+
+@background-gradient    : linear-gradient(
+    to top,
+    rgba(241,241,241,0.75) 0%,
+    rgba(253,253,253,0.75) 100%
+);
+
+@border-color-primary   : lighten(@background-primary, 10%);
+@border-color-secondary : lighten(@background-secondary, 10%);
+@border-color-tertiary  : lighten(@background-tertiary, 10%);
+@border-color-divider   : @border-color-secondary;
+
+
+//============================= Typography =============================//
+
+// ----- Colors -----
+@text-color                     : @soda-white;
+// @text-color-subtle              : fadeout(@text-color, 20%);
+// @text-color-very-subtle         : fadeout(@text-color, 50%);
+@text-color-inverse             : @soda-light-black;
+// @text-color-inverse-subtle      : fadeout(@text-color-inverse, 20%);
+// @text-color-inverse-very-subtle : fadeout(@text-color-inverse, 50%);
+
+@text-color-heading     : @soda-white;
+
+@text-color-link        : @soda-purple;
+@text-color-link-hover  : lighten(@soda-purple, 20%);
+@text-color-link-active : darken(@soda-purple, 20%);
+
+@text-color-selected:  @text-color-inverse;
+
+// @text-color-search-match         : #fff000;
+// @text-color-search-current-match : #ff8b1a;
+
+// @font-family-sans-serif : "Nylas-Pro", "Helvetica", sans-serif;
+// @font-family-serif      : Georgia, "Times New Roman", Times, serif;
+// @font-family-monospace  : Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// @font-family:             @font-family-sans-serif;
+// @font-family-heading:     @font-family-sans-serif;
+
+// ----- Font Weights -----
+// @font-weight-thin      : 200;
+// @font-weight-blond     : 300;
+// @font-weight-normal    : 400;
+// @font-weight-medium    : 500;
+// @font-weight-semi-bold : 600;
+// @headings-font-weight  : 600;
+
+// ----- Font Sizes -----
+// @font-size-base:          14px;
+
+// @font-size-tiny    : @font-size-base * 0.75; // 10.5px
+// @font-size-smaller : @font-size-base * 0.86; // 12px
+// @font-size-small   : @font-size-base * 0.93; // 13px
+// @font-size         : @font-size-base;        // 14px
+// @font-size-large   : @font-size-base * 1.14; // 16px
+// @font-size-larger  : @font-size-base * 1.29; // 18px
+
+// @font-size-h1      : @font-size-base * 1.71;  // 24px
+// @font-size-h2      : @font-size-base * 1.71;  // 24px
+// @font-size-h3      : @font-size-base * 1.43;  // 20px
+// @font-size-h4      : @font-size-base * 1.29;  // 18px
+// @font-size-h5      : @font-size-base;
+// @font-size-h6      : @font-size-base * 0.86;  // 12px
+
+// ----- Line Height -----
+// @line-height-base     : 1.5; // 22.5/15
+// @line-height-computed : floor((@font-size-base * @line-height-base)); // ~20px
+// @line-height-heading  : 1.1;
+
+
+//============================== Spacing ===============================//
+// Define common padding and border radius sizes and more. Values based on
+// 14px text and 1.428 line-height (~20px to start).
+
+// @spacing-standard         : @font-size-base;
+
+// @spacing-quarter          : @spacing-standard * 0.25;
+// @spacing-half             : @spacing-standard * 0.5;
+// @spacing-three-quarters   : @spacing-standard * 0.75;
+// @spacing-double           : @spacing-standard * 2;
+
+// @padding-base-vertical    : 5px;
+// @padding-base-horizontal  : 12px;
+
+// @padding-large-vertical   : 9px;
+// @padding-large-horizontal : 16px;
+
+// @padding-small-vertical   : 4px;
+// @padding-small-horizontal : 10px;
+
+// @padding-xs-vertical      : 1px;
+// @padding-xs-horizontal    : 5px;
+
+// @line-height-large        : @line-height-computed * 1.3;
+// @line-height-small        : @line-height-computed * 0.95;
+
+// @border-radius-base       : 3px;
+// @border-radius-large      : 5px;
+// @border-radius-small      : 2px;
+
+
+//============================== Shadows ===============================//
+
+// @standard-shadow-color : rgba(0, 0, 0, 0.15);
+// @standard-shadow       : 0 1px 4px 0 @standard-shadow-color;
+// @standard-shadow-up    : 0 -1px 4px 0 @standard-shadow-color;
+// @shadow-border         : 0 0.5px 0 @standard-shadow-color, 0 -0.5px 0 @standard-shadow-color,
+//                          0.5px 0 0 @standard-shadow-color, -0.5px 0 0 @standard-shadow-color;
+
+
+//=============================== Buttons ==============================//
+
+// @btn-shadow              : @standard-shadow;
+
+// @btn-default-bg-color    : darken(@background-primary, 0.5%);
+// @btn-default-text-color  : @text-color;
+
+// @btn-icon-color          : #919191;
+
+// @btn-action-bg-color     : @color-success;
+// @btn-action-text-color   : @text-color;
+
+// @btn-emphasis-bg-color   : #5b90fb;
+// @btn-emphasis-text-color : @text-color-inverse;
+
+// @btn-danger-bg-color     : @color-danger;
+// @btn-danger-text-color   : @text-color-inverse;
+
+
+//=============================== Dropdowns ============================//
+
+// @dropdown-default-bg-color     : @background-primary;
+// @dropdown-default-text-color   : @text-color;
+// @dropdown-default-border-color : fadeout(@border-color-primary, 10%);
+
+
+//=============================== Inputs ===============================//
+
+@input-bg                   : @soda-light-black;
+// @input-bg-disabled          : @gray-lighter;
+
+// @input-border-color         : fadeout(@border-color-primary, 10%);
+// @input-border-color-blurred : desaturate(@input-border-color, 100%);
+
+@input-font-size: 14px;
+
+
 //=============================== Components ===========================//
 
 //== Toolbar
-@toolbar-background-color: darken(@white, 17.5%);
+@toolbar-background-color: @soda-light-black;
 
 //== Account Sidebar
-@panel-background-color   : @gray-lighter;
+@panel-background-color   : @soda-black;
 @source-list-bg           : @panel-background-color;
-@source-list-active-bg    : @panel-background-color;
-@source-list-active-color : @component-active-color;
+@source-list-active-bg    : linear-gradient(@soda-light-grey, @soda-grey);
+@source-list-active-color : @soda-white;
 
 //== Thread List (e.g, `.list-group-item`, `.list-item`)
-@list-bg              : @soda-black;
-@list-border          : @soda-light-black;
-@list-hover-bg        : lighten(@list-bg, 4%);
+@list-bg              : @soda-light-black;
+@list-border          : @soda-grey;
+@list-hover-bg        : lighten(@list-bg, 10%);
 @list-focused-color   : @list-bg;
 @list-focused-bg      : @component-active-color;
 @list-focused-border  : @list-focused-bg;
@@ -23,61 +207,20 @@
 @list-selected-border : mix(@component-active-color, @list-bg, 50%);
 
 //== Notifications
-@background-color-info    : @blue-light;
-@background-color-success : #009ec4;
-@background-color-warning : #ff4800;
-@background-color-error   : #f15f4b;
-@background-color-pending : #b4babd;
+@background-color-info    : @soda-cyan;
+@background-color-success : @soda-green;
+@background-color-warning : @soda-orange;
+@background-color-error   : @soda-dark-red;
+@background-color-pending : @soda-purple;
 
 //== Menus
-@menu-item-color-hover    : fade(@blue-light, 10%);
-@menu-item-color-selected : @blue-light;
+@menu-item-color-hover    : fade(@soda-cyan, 10%);
+@menu-item-color-selected : @soda-cyan;
 @menu-text-color-selected : @text-color-inverse;
 
 //== Sizes
-@input-font-size         : 14px;
 @component-padding       : 10px;
 @component-icon-padding  : 5px;
 @component-icon-size     : 16px;
 @component-line-height   : 25px;
 @component-border-radius : 2px;
-
-
-//=============================== Colors ===============================//
-
-@accent-primary:      @blue;
-@accent-primary-dark: @blue-dark;
-
-@background-primary     : @soda-black;
-@background-off-primary : @soda-black;
-@background-secondary   : @soda-light-black;
-@background-tertiary    : @soda-light-black;
-
-@color-info    : @soda-dark-blue;
-@color-success : @soda-green;
-@color-warning : @soda-orange;
-@color-error   : @soda-pink;
-@color-danger  : @soda-dark-red;
-
-@component-active-color : @accent-primary-dark;
-@component-active-bg    : @background-primary;
-
-@background-gradient: linear-gradient(to top, rgba(241,241,241,0.75) 0%,
-                        rgba(253,253,253,0.75) 100%);
-
-@border-color-primary   : darken(@background-primary, 10%);
-@border-color-secondary : darken(@background-secondary, 10%);
-@border-color-tertiary  : darken(@background-tertiary, 10%);
-@border-color-divider   : @border-color-secondary;
-
-//============================= Typography =============================//
-
-// ----- Colors -----
-@text-color         : @soda-white;
-@text-color-inverse : @soda-black;
-
-@text-color-heading: @soda-white;
-
-@text-color-link        : @soda-blue;
-@text-color-link-hover  : @soda-blue-dark;
-@text-color-link-active : @soda-blue-dark;
